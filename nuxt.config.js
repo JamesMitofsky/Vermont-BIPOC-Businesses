@@ -48,6 +48,9 @@ export default {
     '@nuxt/content',
     '@nuxtjs/axios',
   ],
+  content: {
+    fullTextSearchFields: ['businessName', 'ownerName', 'type', 'description', 'location']
+  },
   /*
   ** vuetify module configuration
   ** https://github.com/nuxt-community/vuetify-module
