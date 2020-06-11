@@ -17,17 +17,20 @@
 </template>
 
 <script>
-if (window.netlifyIdentity) {
-  window.netlifyIdentity.on('init', user => {
-    if (!user) {
-      window.netlifyIdentity.on('login', () => {
-        document.location.href = '/admin/'
+export default {
+  
+  mounted() {
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on('init', user => {
+        if (!user) {
+          window.netlifyIdentity.on('login', () => {
+            document.location.href = '/admin/'
+          })
+        }
       })
     }
-  })
-}
-
-export default {
+  },
+  
   async asyncData({ $content, params }) {
     const docs = await $content('business').fetch()
     return { docs }
