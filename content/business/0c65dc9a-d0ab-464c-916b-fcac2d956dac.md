@@ -1,9 +1,0 @@
----
-businessName: Queen City Yoga
-ownerName: Deshawn Thomas
-type: Musician/Performer/Artist
-description: Yoga Studio, Co-owns the studio with his awesome wife Marla!
-location: South Burlington
-website: www.queencityyogavt.com
-facebook: 
----

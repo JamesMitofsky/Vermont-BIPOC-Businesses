@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app background-color="yellow" dark>
     <v-app-bar fixed app>
       <nuxt-link class="unstyled-link" to="/">
         <v-toolbar-title v-text="title" />

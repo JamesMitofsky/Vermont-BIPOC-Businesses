@@ -1,7 +1,8 @@
 <template>
   <div>
     <v-card class="mb-5">
-      <v-card-title>{{doc.businessName}}</v-card-title>
+      <v-card-title v-if="doc.businessName">{{doc.businessName}}</v-card-title>
+      <v-card-title v-if="doc.ownerName">{{doc.ownerName}}</v-card-title>
       <v-card-subtitle>{{doc.type}}</v-card-subtitle>
 
       <v-card-text class="white--text">{{doc.description}}</v-card-text>
