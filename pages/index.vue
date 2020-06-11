@@ -16,7 +16,6 @@
 export default {
   async asyncData({ $content, params }) {
     const docs = await $content('business').fetch()
-    console.log('docs', docs)
     return { docs }
   }
 }

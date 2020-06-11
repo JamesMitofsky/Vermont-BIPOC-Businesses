@@ -22,6 +22,11 @@
 
 <script>
 export default {
+  
+  head: {
+    title: 'Vermont BIPOC Business'
+  },
+
   data() {
     return {
       title: 'Vermont BIPOC Businesses'
