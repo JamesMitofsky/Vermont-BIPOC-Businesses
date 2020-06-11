@@ -22,9 +22,12 @@
 
 <script>
 export default {
-  
+
   head: {
-    title: 'Vermont BIPOC Business'
+    title: 'Vermont BIPOC Businesses',
+    script: [
+      { src: "https://identity.netlify.com/v1/netlify-identity-widget.js" }
+    ]
   },
 
   data() {
