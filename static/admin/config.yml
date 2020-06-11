@@ -13,13 +13,16 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - {label: "Business Name", name: "title", widget: "string"}
-      - {label: "Area of Business", name: "type", widget: "select", options: ['Agriculture', 'Design']}
+      - {label: "Owner Name", name: "ownerName", widget: "string"}
+      - {label: "Area of Business", name: "type", widget: "select", options: ['Musician/Performer/Artist', 'Barber/Stylist', 'Graphic Design', 'Photography', 'Healthcare Provider', 'Market/Grocer', 'Educator/Consultant', 'Restaurant/Coffee Shop/Bar', 'Retail', 'Trades', 'Other']}
       - {label: "Description", name: "description", widget: "markdown"}
       - {label: "Phone Number", name: "phoneNumber", widget: "number", required: false}
+      - {label: "Location", name: "location", widget: "string", required: false}
 
-      
-      - {label: "Address", name: "address", widget: "string"}
-      - {label: "Weekday Hours", name: "weekdayHours", widget: "string", required: false}
+      - {label: "Website", name: "website", widget: "string", required: false}
+      - {label: "Facebook", name: "facebook", widget: "string", required: false}
+      - {label: "Instagram", name: "instagram", widget: "string", required: false}
+
 
       - {label: "Featured Image", name: "thumbnail", widget: "image", required: false}
       - {label: "Publish Date", name: "date", widget: "hidden", default: "datetime"}
