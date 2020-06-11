@@ -12,7 +12,7 @@ collections:
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-      - {label: "Business Name", name: "title", widget: "string"}
+      - {label: "Business Name", name: "businessName", widget: "string"}
       - {label: "Owner Name", name: "ownerName", widget: "string"}
       - {label: "Area of Business", name: "type", widget: "select", options: ['Musician/Performer/Artist', 'Barber/Stylist', 'Graphic Design', 'Photography', 'Healthcare Provider', 'Market/Grocer', 'Educator/Consultant', 'Restaurant/Coffee Shop/Bar', 'Retail', 'Trades', 'Other']}
       - {label: "Description", name: "description", widget: "markdown"}
