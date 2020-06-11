@@ -13,7 +13,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - {label: "Business Name", name: "title", widget: "string"}
-      - {label: "Area of Business", name: "type", widget: "list", default: ['Agriculture', 'Design']}
+      - {label: "Area of Business", name: "type", widget: "select", options: ['Agriculture', 'Design']}
       - {label: "Description", name: "description", widget: "markdown"}
       - {label: "Phone Number", name: "phoneNumber", widget: "number", required: false}
 
