@@ -22,4 +22,4 @@ collections:
       - {label: "Weekday Hours", name: "weekdayHours", widget: "string", required: false}
 
       - {label: "Featured Image", name: "thumbnail", widget: "image", required: false}
-      - {label: "Publish Date", name: "date", widget: "datetime", widget: "hidden"}
+      - {label: "Publish Date", name: "date", widget: "hidden", default: "datetime"}
