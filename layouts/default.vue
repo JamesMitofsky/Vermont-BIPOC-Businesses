@@ -43,4 +43,14 @@ export default {
   text-decoration: none;
 }
 
+.page-enter-active,
+.page-leave-active {
+  transition: all .2s ease;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+  transform: translateX(100vw);
+}
+
 </style>
