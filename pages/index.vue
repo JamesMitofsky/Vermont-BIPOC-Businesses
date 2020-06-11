@@ -7,12 +7,26 @@
 
     <h1 class="mt-10 align-self-start display-1">Businesses:</h1>
     <v-list class="align-self-start col-12">
-      <v-list-item v-for="doc in docs" :key="doc.slug" :to="doc.path"><span>{{doc.title}}</span><span class="mx-2">—</span><span class="subtitle-2">{{doc.type}}</span></v-list-item>
+      <v-list-item v-for="doc in docs" :key="doc.slug" :to="doc.path">
+        <span>{{doc.title}}</span>
+        <span class="mx-2">—</span>
+        <span class="subtitle-2">{{doc.type}}</span>
+      </v-list-item>
     </v-list>
   </v-layout>
 </template>
 
 <script>
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on('init', user => {
+    if (!user) {
+      window.netlifyIdentity.on('login', () => {
+        document.location.href = '/admin/'
+      })
+    }
+  })
+}
+
 export default {
   async asyncData({ $content, params }) {
     const docs = await $content('business').fetch()
