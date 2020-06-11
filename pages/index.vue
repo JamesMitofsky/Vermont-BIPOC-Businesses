@@ -1,7 +1,7 @@
 <template>
   <v-layout column justify-center align-center>
     <v-card class="col-12">
-      <v-card-title>Support Vermont's BIPOC Community</v-card-title>
+      <v-card-title>Support BIPOC</v-card-title>
       <v-card-text>BIPOC is an acronym for Black, Indigenous, and People of Color. During this pandemic — and especially during a time when the validity of black lives are under extra stress — consider giving your patronage to one of these business owners.</v-card-text>
     </v-card>
 
