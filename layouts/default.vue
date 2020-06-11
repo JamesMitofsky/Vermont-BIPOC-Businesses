@@ -1,7 +1,9 @@
 <template>
   <v-app dark>
-    <v-app-bar :clipped-left="clipped" fixed app>
-      <v-toolbar-title v-text="title" />
+    <v-app-bar fixed app>
+      <nuxt-link class="unstyled-link" to="/">
+        <v-toolbar-title v-text="title" />
+      </nuxt-link>
     </v-app-bar>
 
     <!-- catch injected content -->
@@ -27,3 +29,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.unstyled-link {
+  text-decoration: none;
+}
+
+</style>

@@ -36,12 +36,16 @@ export default {
   */
   buildModules: [
     '@nuxtjs/vuetify',
+    '@nuxt/components'
   ],
+  components: true,
   /*
   ** Nuxt.js modules
   */
   modules: [
     '@nuxtjs/pwa',
+    '@nuxt/content',
+    '@nuxtjs/axios',
   ],
   /*
   ** vuetify module configuration

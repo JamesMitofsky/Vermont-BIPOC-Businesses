@@ -20,3 +20,12 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+
+# Personal Documentation
+
+## Installing Components Module
+By default, Vue will let you import and export named components, but this process can become rather tedious at scale. The [Nuxt Components Module](https://github.com/nuxt/components) lets you sidestep the manual labor, instead just grabbing components inline as per usual. Ex. ```<Component />```
+
+## Fetching Content
+?? Fetching content from a component didn't work but fetching from a page did. Maybe that's because we build things on the page level, not the component level.
