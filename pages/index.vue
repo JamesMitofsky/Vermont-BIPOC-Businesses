@@ -68,7 +68,6 @@ export default {
         'Musician/Performer/Artist',
         'Barber/Stylist',
         'Graphic Design',
-        'Photography',
         'Healthcare Provider',
         'Market/Grocer',
         'Educator/Consultant',
