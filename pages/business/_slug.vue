@@ -8,7 +8,7 @@
       <v-card-text class="white--text">{{doc.description}}</v-card-text>
 
       <v-card class="d-flex text-center text-secondary">
-        <v-card-text>
+        <v-card-text v-show="doc.location">
           Located in
           <a
             target="_blank"
@@ -16,8 +16,8 @@
           >{{doc.location}}</a>
         </v-card-text>
 
-        <v-card-text>
-          <a target="_blank" :href="'//' + doc.website">Business Website</a>
+        <v-card-text v-show="doc.website">
+          <a target="_blank" :href="formattedURL">Business Website</a>
         </v-card-text>
       </v-card>
     </v-card>
@@ -34,6 +34,20 @@
 
 <script>
 export default {
+
+  computed: {
+    formattedURL() {
+      if (this.doc.website.includes('http')) {
+        console.log('match')
+        return this.doc.website
+      } else {
+        let newRoot = '//' + this.doc.website
+        return newRoot
+      }
+    }
+  },
+
+
   async asyncData({ $content, params }) {
     const doc = await $content(`business/${params.slug}` || 'index').fetch()
     const [prev, next] = await $content(`business`)
