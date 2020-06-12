@@ -40,11 +40,12 @@
     </v-list>
 
     <!-- All businesses -->
-    <h1 class="align-self-start display-1">All Businesses:</h1>
-    <v-select :items="businessTypes" v-model="selectedType" label="Filter"></v-select>
+    <v-row class="d-flex custom-align mr-auto">
+      <h1 class="display-1 mr-10">Businesses:</h1>
+      <v-select :items="businessTypes" v-model="selectedType" label="Filter"></v-select>
+    </v-row>
 
-
-    <v-list class="align-self-start col-12">
+    <v-list class="col-12">
       <v-list-item v-for="type in typeSorting" :key="type.slug" :to="type.path">
         <v-list-item-content v-if="type.businessName || type.ownerName">
           <v-list-item-title v-if="type.businessName">{{type.businessName}}</v-list-item-title>
@@ -93,7 +94,9 @@ export default {
       return this.docs.filter(doc => {
         if (doc.type.match(this.selectedType)) {
           return doc
-        } else if (this.selectedType == "Show All") { return doc }
+        } else if (this.selectedType == 'Show All') {
+          return doc
+        }
       })
     }
   },
@@ -119,7 +122,7 @@ export default {
 </script>
 
 <style scoped>
-nuxt-link {
-  padding: 100px;
+.custom-align {
+  align-items: center;
 }
 </style>
