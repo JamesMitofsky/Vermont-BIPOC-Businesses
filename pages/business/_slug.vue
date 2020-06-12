@@ -17,7 +17,7 @@
         </v-card-text>
 
         <v-card-text>
-          <a target="_blank" :href="doc.website">Business Website</a>
+          <a target="_blank" :href="'//' + doc.website">Business Website</a>
         </v-card-text>
       </v-card>
     </v-card>
