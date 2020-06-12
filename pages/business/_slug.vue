@@ -38,7 +38,6 @@ export default {
   computed: {
     formattedURL() {
       if (this.doc.website.includes('http')) {
-        console.log('match')
         return this.doc.website
       } else {
         let newRoot = '//' + this.doc.website

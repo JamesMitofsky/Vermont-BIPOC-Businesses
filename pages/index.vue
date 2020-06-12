@@ -5,48 +5,51 @@
       <v-card-text>BIPOC is an acronym for Black, Indigenous, and People of Color. During this pandemic — and especially during a time when the validity of black lives are under extra stress — consider giving your patronage to one of these business owners.</v-card-text>
     </v-card>
 
-      <v-autocomplete
-        class="align-self-start my-10"
-        type="text"
-        :search-input.sync="search"
-        :items="filteredItems"
-        hide-no-data
-        append-icon
-        hide-details
-        hide-selected
-        clearable
-        prepend-icon="mdi-database-search"
-        placeholder="Search Businesses"
-      ></v-autocomplete>
-      <!-- Filtered list -->
-      <v-list v-if="search != null && search != ''" class="align-self-start col-12 mt-n8 mb-10">
-        <v-list-item
-          class="primary lighten4"
-          v-for="item in filteredItems"
-          :key="item.slug"
-          :to="item.path"
-        >
-          <v-list-item-content v-if="item.businessName || item.ownerName">
-            <v-list-item-title v-if="item.businessName">{{item.businessName}}</v-list-item-title>
-            <v-list-item-title v-else-if="item.ownerName">{{item.ownerName}}</v-list-item-title>
-            <v-list-item-subtitle class="col-10">{{item.description}}</v-list-item-subtitle>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item v-show="filteredItems.length == 0">
-          <v-list-item-content>
-            <v-list-item-title>Sorry, we didn't find a match.</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
+    <v-autocomplete
+      class="align-self-start my-10"
+      type="text"
+      :search-input.sync="search"
+      :items="filteredItems"
+      hide-no-data
+      append-icon
+      hide-details
+      hide-selected
+      clearable
+      prepend-icon="mdi-database-search"
+      placeholder="Search Businesses"
+    ></v-autocomplete>
+    <!-- Filtered list -->
+    <v-list v-if="search != null && search != ''" class="align-self-start col-12 mt-n8 mb-10">
+      <v-list-item
+        class="primary lighten4"
+        v-for="item in filteredItems"
+        :key="item.slug"
+        :to="item.path"
+      >
+        <v-list-item-content v-if="item.businessName || item.ownerName">
+          <v-list-item-title v-if="item.businessName">{{item.businessName}}</v-list-item-title>
+          <v-list-item-title v-else-if="item.ownerName">{{item.ownerName}}</v-list-item-title>
+          <v-list-item-subtitle class="col-10">{{item.description}}</v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+      <v-list-item v-show="filteredItems.length == 0">
+        <v-list-item-content>
+          <v-list-item-title>Sorry, we didn't find a match.</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+    </v-list>
 
     <!-- All businesses -->
     <h1 class="align-self-start display-1">All Businesses:</h1>
+    <v-select :items="businessTypes" v-model="selectedType" label="Filter"></v-select>
+
+
     <v-list class="align-self-start col-12">
-      <v-list-item v-for="doc in docs" :key="doc.slug" :to="doc.path">
-        <v-list-item-content v-if="doc.businessName || doc.ownerName">
-          <v-list-item-title v-if="doc.businessName">{{doc.businessName}}</v-list-item-title>
-          <v-list-item-title v-else-if="doc.ownerName">{{doc.ownerName}}</v-list-item-title>
-          <v-list-item-subtitle>{{doc.description}}</v-list-item-subtitle>
+      <v-list-item v-for="type in typeSorting" :key="type.slug" :to="type.path">
+        <v-list-item-content v-if="type.businessName || type.ownerName">
+          <v-list-item-title v-if="type.businessName">{{type.businessName}}</v-list-item-title>
+          <v-list-item-title v-else-if="type.ownerName">{{type.ownerName}}</v-list-item-title>
+          <v-list-item-subtitle>{{type.description}}</v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
     </v-list>
@@ -57,7 +60,22 @@
 export default {
   data() {
     return {
-      search: ''
+      search: '',
+      selectedType: '',
+      businessTypes: [
+        'Show All',
+        'Musician/Performer/Artist',
+        'Barber/Stylist',
+        'Graphic Design',
+        'Photography',
+        'Healthcare Provider',
+        'Market/Grocer',
+        'Educator/Consultant',
+        'Restaurant/Coffee Shop/Bar',
+        'Retail',
+        'Trades',
+        'Other'
+      ]
     }
   },
 
@@ -68,6 +86,14 @@ export default {
           let localSearch = new RegExp('\\b' + this.search, 'gi')
           return JSON.stringify(doc).match(localSearch)
         }
+      })
+    },
+
+    typeSorting() {
+      return this.docs.filter(doc => {
+        if (doc.type.match(this.selectedType)) {
+          return doc
+        } else if (this.selectedType == "Show All") { return doc }
       })
     }
   },
