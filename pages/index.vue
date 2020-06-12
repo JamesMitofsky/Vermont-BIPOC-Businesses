@@ -11,7 +11,7 @@
       :search-input.sync="search"
       :items="filteredItems"
       hide-no-data
-      append-icon=""
+      append-icon
       hide-details
       hide-selected
       clearable
@@ -57,7 +57,8 @@ export default {
     filteredItems() {
       return this.docs.filter(doc => {
         if (this.search != '') {
-          let localSearch = new RegExp(this.search, 'gi')
+          let localSearch = new RegExp('\\b' + this.search, 'gi')
+          console.log(localSearch)
           return JSON.stringify(doc).match(localSearch)
         }
       })
