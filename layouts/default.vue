@@ -1,5 +1,5 @@
 <template>
-  <v-app background-color="yellow" dark>
+  <v-app dark>
     <v-app-bar fixed app>
       <nuxt-link class="unstyled-link" to="/">
         <v-toolbar-title v-text="title" />
@@ -9,7 +9,7 @@
         <nuxt-link class="unstyled-link" to="/">Home</nuxt-link>
       </v-btn>
       <v-btn class="white">
-        <nuxt-link class="unstyled-link" to="/Contact">Contact</nuxt-link>
+        <nuxt-link class="unstyled-link" to="/FAQ">FAQ</nuxt-link>
       </v-btn>
     </v-app-bar>
 
@@ -38,7 +38,7 @@ export default {
 
   data() {
     return {
-      title: 'Vermont BIPOC Businesses'
+      title: 'VT BIPOC Owned'
     }
   }
 }
