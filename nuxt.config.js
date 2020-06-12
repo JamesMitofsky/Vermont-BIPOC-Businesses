@@ -18,13 +18,13 @@ export default {
       { property: 'og:url', content: 'https://vermont-bipoc-businesses.netlify.app/' },
       { property: 'og:title', content: process.env.npm_package_name },
       { property: 'og:description', content: process.env.npm_package_description },
-      { property: 'og:image', content: 'https://vermont-bipoc-businesses.netlify.app/static/preview.png' },
+      { property: 'og:image', content: 'https://vermont-bipoc-businesses.netlify.app/preview.png' },
       // Twitter
       { property: 'twitter:card', content: 'summary_large_image' },
       { property: 'twitter:url', content: 'https://vermont-bipoc-businesses.netlify.app/' },
       { property: 'twitter:title', content: process.env.npm_package_name },
       { property: 'twitter:description', content: process.env.npm_package_description },
-      { property: 'twitter:image', content: 'https://vermont-bipoc-businesses.netlify.app/static/preview.png' }
+      { property: 'twitter:image', content: 'https://vermont-bipoc-businesses.netlify.app/preview.png' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
