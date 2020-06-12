@@ -8,7 +8,7 @@
 
     <!-- catch injected content -->
     <v-content>
-      <v-container>
+      <v-container class="col-lg-8">
         <nuxt />
       </v-container>
     </v-content>
