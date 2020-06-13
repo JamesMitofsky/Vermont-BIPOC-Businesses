@@ -1,5 +1,5 @@
 <template>
-  <v-layout column>
+  <div column>
     <v-card class="my-5">
       <v-card-title>How do I edit my page?</v-card-title>
       <v-card-text>There's an <a href="https://vermont-bipoc-businesses.netlify.app/admin/#/" target="_blank">Admin Dashboard</a> where you can edit pages in a way similar to social media. The portal will require you to register, but there are no special requirements for that.</v-card-text>
@@ -25,7 +25,7 @@
         >developer resources</a>.
       </v-card-text>
     </v-card>
-  </v-layout>
+  </div>
 </template>
 
 <script>
