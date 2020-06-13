@@ -1,16 +1,16 @@
 <template>
   <v-app dark>
     <v-app-bar fixed app>
-      <nuxt-link class="unstyled-link" to="/">
+      <nuxt-link class="link" to="/">
         <v-toolbar-title v-text="title" />
       </nuxt-link>
       <v-spacer></v-spacer>
-      <v-btn class="white mr-5">
-        <nuxt-link class="unstyled-link" to="/">Home</nuxt-link>
-      </v-btn>
-      <v-btn class="white">
-        <nuxt-link class="unstyled-link" to="/FAQ">FAQ</nuxt-link>
-      </v-btn>
+      <nuxt-link class="link" to="/">
+        <v-btn class="white mr-5">Home</v-btn>
+      </nuxt-link>
+      <nuxt-link class="link" to="/FAQ">
+        <v-btn class="white">FAQ</v-btn>
+      </nuxt-link>
     </v-app-bar>
 
     <!-- catch injected content -->
@@ -45,8 +45,9 @@ export default {
 </script>
 
 <style>
-.unstyled-link {
+.link {
   text-decoration: none;
+  color: #1976d2;
 }
 
 .page-enter-active,

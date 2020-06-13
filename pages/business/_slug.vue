@@ -22,12 +22,12 @@
       </v-card>
     </v-card>
     <div class="d-flex justify-center">
-      <v-btn class="ma-5" v-if="prev">
-        <nuxt-link :to="prev.slug">Previous</nuxt-link>
-      </v-btn>
-      <v-btn class="ma-5" v-if="next">
-        <nuxt-link :to="next.slug">Next</nuxt-link>
-      </v-btn>
+      <nuxt-link :to="prev.slug">
+        <v-btn class="ma-5" v-if="prev">Previous</v-btn>
+      </nuxt-link>
+      <nuxt-link :to="next.slug">
+        <v-btn class="ma-5" v-if="next">Next</v-btn>
+      </nuxt-link>
     </div>
   </div>
 </template>
