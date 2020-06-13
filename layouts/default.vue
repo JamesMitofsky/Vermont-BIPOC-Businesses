@@ -6,10 +6,10 @@
       </nuxt-link>
       <v-spacer></v-spacer>
       <nuxt-link class="link" to="/">
-        <v-btn class="white mr-5">Home</v-btn>
+        <v-btn class="white blue--text mr-5">Home</v-btn>
       </nuxt-link>
       <nuxt-link class="link" to="/FAQ">
-        <v-btn class="white">FAQ</v-btn>
+        <v-btn class="white blue--text">FAQ</v-btn>
       </nuxt-link>
     </v-app-bar>
 
@@ -47,7 +47,6 @@ export default {
 <style>
 .link {
   text-decoration: none;
-  color: #1976d2;
 }
 
 .page-enter-active,
