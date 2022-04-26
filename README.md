@@ -1,6 +1,6 @@
 # Vermont-BIPOC-Business
 
-> A collection of businesses owned by Black, Indigenous, and People of Color.
+A collection of businesses owned by Black, Indigenous, and People of Color (BIPOC) designed to improve visibility during the Covid-19 pandemic.
 
 ## Getting Started / Install
 
