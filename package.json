@@ -15,7 +15,7 @@
     "@nuxtjs/axios": "^5.11.0",
     "@nuxtjs/pwa": "^3.0.0-beta.20",
     "netlify-cms": "^2.10.50",
-    "nuxt": "^2.12.2",
+    "nuxt": "^3.4.3",
     "vue-router": "^3.3.4"
   },
   "devDependencies": {
